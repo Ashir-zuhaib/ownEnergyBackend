@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "ownproduction",
+    "Leads": "ownproduction"
+  },
+  "targets": {},
+  "etags": {}
+}

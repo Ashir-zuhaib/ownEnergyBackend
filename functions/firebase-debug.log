@@ -1,0 +1,863 @@
+[debug] [2022-11-07T09:03:11.113Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T09:03:11.120Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2022-11-07T09:03:11.120Z] CLI Version:   11.16.0
+[debug] [2022-11-07T09:03:11.120Z] Platform:      win32
+[debug] [2022-11-07T09:03:11.120Z] Node Version:  v16.17.1
+[debug] [2022-11-07T09:03:11.122Z] Time:          Mon Nov 07 2022 05:03:11 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T09:03:11.122Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T09:03:11.247Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T09:03:11.258Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T09:03:11.259Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T09:03:11.259Z] [iam] checking project ownproduction for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-11-07T09:03:11.262Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T09:03:11.262Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:03:11.263Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T09:03:12.773Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions 200
+[debug] [2022-11-07T09:03:12.773Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T09:03:12.775Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-11-07T09:03:12.775Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-07T09:03:14.119Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-11-07T09:03:14.119Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'ownproduction'...
+[info] 
+[info] i  deploying functions 
+[debug] [2022-11-07T09:03:14.128Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:03:14.687Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:03:14.687Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_953dd91c-1e2d-4f69-947e-30b8a03c0ba9"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-11-07T09:03:14.694Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-11-07T09:03:14.694Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:03:14.696Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-11-07T09:03:14.696Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:03:14.698Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [none]
+[debug] [2022-11-07T09:03:14.699Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:03:14.701Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [none]
+[debug] [2022-11-07T09:03:14.702Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:03:16.276Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com 200
+[debug] [2022-11-07T09:03:16.276Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-11-07T09:03:16.278Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com 200
+[debug] [2022-11-07T09:03:16.278Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-11-07T09:03:16.281Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com 200
+[debug] [2022-11-07T09:03:16.281Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-11-07T09:03:16.421Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com 200
+[debug] [2022-11-07T09:03:16.422Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-11-07T09:03:16.422Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig [none]
+[debug] [2022-11-07T09:03:16.870Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig 200
+[debug] [2022-11-07T09:03:16.870Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig {"projectId":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"}
+[debug] [2022-11-07T09:03:16.871Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs [none]
+[debug] [2022-11-07T09:03:17.327Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs 200
+[debug] [2022-11-07T09:03:17.327Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-11-07T09:03:17.333Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-11-07T09:03:22.187Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-11-07T09:03:22.187Z] Building nodejs source
+[debug] [2022-11-07T09:03:22.190Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-07T09:03:22.706Z] Serving at port 9005
+
+[debug] [2022-11-07T09:03:22.837Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-11-07T09:03:22.855Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged E:\OwnEnergy3Oct\OwnEnergyBackend\functions (54.41 KB) for uploading 
+[debug] [2022-11-07T09:03:22.960Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions [none]
+[debug] [2022-11-07T09:03:23.693Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:03:23.693Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions {"functions":[{"name":"projects/ownproduction/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-ownproduction.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"DELETE_IN_PROGRESS","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ownproduction@appspot.gserviceaccount.com","updateTime":"2022-11-07T08:58:40.126Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-635194157534.us-central1.cloudfunctions.appspot.com/ea7b4e13-5432-481c-ba74-484dbbb0ab5e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"storageBucket\":\"ownproduction.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"ownproduction"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"707a2d36-6b0f-4ff8-82ad-580464c51a63","buildName":"projects/1079660110912/locations/us-central1/builds/707a2d36-6b0f-4ff8-82ad-580464c51a63","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-a9wj-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Leads/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-sea-ecdt@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:53.056Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search-a9wj","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search-a9wj"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Leads","COLLECTION_PATH":"Leads","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search-a9wj","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"bb08869a-9269-434d-8365-781a526d826a","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-a9wj-ALGOLIA_API_KEY","version":"2"}],"buildName":"projects/1079660110912/locations/us-east1/builds/bb08869a-9269-434d-8365-781a526d826a","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Users/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-search@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:51.423Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Users","COLLECTION_PATH":"Users","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"70517740-e6ea-4508-80ee-fc7a158b7aec","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-ALGOLIA_API_KEY","version":"1"}],"buildName":"projects/1079660110912/locations/us-east1/builds/70517740-e6ea-4508-80ee-fc7a158b7aec","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-07T09:03:23.694Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-07T09:03:24.897Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:03:24.897Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions {}
+[debug] [2022-11-07T09:03:24.908Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:03:25.485Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:03:25.485Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_953dd91c-1e2d-4f69-947e-30b8a03c0ba9"}
+[debug] [2022-11-07T09:03:25.487Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-11-07T09:03:25.487Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-11-07T09:03:26.590Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl 500
+[debug] [2022-11-07T09:03:26.590Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {"error":{"code":500,"message":"The service has encountered an internal error. Please try again later","status":"INTERNAL"}}
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[warn] !  functions: Upload Error: HTTP Error: 500, The service has encountered an internal error. Please try again later 
+[error] 
+[error] Error: HTTP Error: 500, The service has encountered an internal error. Please try again later
+[debug] [2022-11-07T09:03:26.889Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "The service has encountered an internal error. Please try again later",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-11-07T09:05:16.103Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T09:05:16.105Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2022-11-07T09:05:16.106Z] CLI Version:   11.16.0
+[debug] [2022-11-07T09:05:16.106Z] Platform:      win32
+[debug] [2022-11-07T09:05:16.106Z] Node Version:  v16.17.1
+[debug] [2022-11-07T09:05:16.107Z] Time:          Mon Nov 07 2022 05:05:16 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T09:05:16.108Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T09:05:16.197Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T09:05:16.207Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T09:05:16.208Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T09:05:16.209Z] [iam] checking project ownproduction for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-11-07T09:05:16.211Z] > refreshing access token with scopes: []
+[debug] [2022-11-07T09:05:16.214Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-07T09:05:16.215Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-07T09:05:16.619Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-07T09:05:16.619Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-07T09:05:16.644Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T09:05:16.645Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:05:16.645Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T09:05:18.219Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions 200
+[debug] [2022-11-07T09:05:18.219Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T09:05:18.221Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-11-07T09:05:18.223Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-07T09:05:19.711Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-11-07T09:05:19.712Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'ownproduction'...
+[info] 
+[info] i  deploying functions 
+[debug] [2022-11-07T09:05:19.722Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:05:20.326Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:05:20.327Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_953dd91c-1e2d-4f69-947e-30b8a03c0ba9"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-11-07T09:05:20.333Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-11-07T09:05:20.333Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:05:20.336Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-11-07T09:05:20.337Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:05:20.339Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [none]
+[debug] [2022-11-07T09:05:20.340Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:05:20.342Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [none]
+[debug] [2022-11-07T09:05:20.342Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:05:22.032Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com 200
+[debug] [2022-11-07T09:05:22.032Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-11-07T09:05:22.056Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com 200
+[debug] [2022-11-07T09:05:22.057Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-11-07T09:05:22.059Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com 200
+[debug] [2022-11-07T09:05:22.060Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-11-07T09:05:22.113Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com 200
+[debug] [2022-11-07T09:05:22.114Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-11-07T09:05:22.119Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig [none]
+[debug] [2022-11-07T09:05:22.575Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig 200
+[debug] [2022-11-07T09:05:22.575Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig {"projectId":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"}
+[debug] [2022-11-07T09:05:22.578Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs [none]
+[debug] [2022-11-07T09:05:23.177Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs 200
+[debug] [2022-11-07T09:05:23.177Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-11-07T09:05:23.183Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-11-07T09:05:26.594Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-11-07T09:05:26.597Z] Building nodejs source
+[debug] [2022-11-07T09:05:26.599Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-07T09:05:26.998Z] Serving at port 9005
+
+[debug] [2022-11-07T09:05:27.091Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-11-07T09:05:27.107Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged E:\OwnEnergy3Oct\OwnEnergyBackend\functions (54.41 KB) for uploading 
+[debug] [2022-11-07T09:05:27.186Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions [none]
+[debug] [2022-11-07T09:05:27.939Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:05:27.940Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions {"functions":[{"name":"projects/ownproduction/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-ownproduction.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"DELETE_IN_PROGRESS","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ownproduction@appspot.gserviceaccount.com","updateTime":"2022-11-07T08:58:40.126Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-635194157534.us-central1.cloudfunctions.appspot.com/ea7b4e13-5432-481c-ba74-484dbbb0ab5e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"storageBucket\":\"ownproduction.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"ownproduction"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"707a2d36-6b0f-4ff8-82ad-580464c51a63","buildName":"projects/1079660110912/locations/us-central1/builds/707a2d36-6b0f-4ff8-82ad-580464c51a63","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-a9wj-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Leads/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-sea-ecdt@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:53.056Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search-a9wj","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search-a9wj"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Leads","COLLECTION_PATH":"Leads","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search-a9wj","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"bb08869a-9269-434d-8365-781a526d826a","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-a9wj-ALGOLIA_API_KEY","version":"2"}],"buildName":"projects/1079660110912/locations/us-east1/builds/bb08869a-9269-434d-8365-781a526d826a","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Users/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-search@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:51.423Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Users","COLLECTION_PATH":"Users","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"70517740-e6ea-4508-80ee-fc7a158b7aec","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-ALGOLIA_API_KEY","version":"1"}],"buildName":"projects/1079660110912/locations/us-east1/builds/70517740-e6ea-4508-80ee-fc7a158b7aec","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-07T09:05:27.945Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-07T09:05:29.178Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:05:29.178Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions {}
+[debug] [2022-11-07T09:05:29.188Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:05:29.791Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:05:29.791Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_953dd91c-1e2d-4f69-947e-30b8a03c0ba9"}
+[debug] [2022-11-07T09:05:29.795Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-11-07T09:05:29.795Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-11-07T09:05:30.891Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl 500
+[debug] [2022-11-07T09:05:30.892Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {"error":{"code":500,"message":"The service has encountered an internal error. Please try again later","status":"INTERNAL"}}
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[warn] !  functions: Upload Error: HTTP Error: 500, The service has encountered an internal error. Please try again later 
+[error] 
+[error] Error: HTTP Error: 500, The service has encountered an internal error. Please try again later
+[debug] [2022-11-07T09:05:31.196Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "The service has encountered an internal error. Please try again later",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-11-07T09:20:13.875Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T09:20:13.878Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2022-11-07T09:20:13.878Z] CLI Version:   11.16.0
+[debug] [2022-11-07T09:20:13.878Z] Platform:      win32
+[debug] [2022-11-07T09:20:13.879Z] Node Version:  v16.17.1
+[debug] [2022-11-07T09:20:13.880Z] Time:          Mon Nov 07 2022 05:20:13 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T09:20:13.880Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T09:20:13.966Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T09:20:13.973Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T09:20:13.974Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T09:20:13.974Z] [iam] checking project ownproduction for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-11-07T09:20:13.977Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T09:20:13.977Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:20:13.978Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T09:20:15.466Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions 200
+[debug] [2022-11-07T09:20:15.466Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T09:20:15.467Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-11-07T09:20:15.467Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-07T09:20:16.936Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-11-07T09:20:16.936Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'ownproduction'...
+[info] 
+[info] i  deploying functions 
+[debug] [2022-11-07T09:20:16.945Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:20:18.703Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:20:18.704Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_4107973a-f2e5-41a0-890b-8077cd6c608a"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-11-07T09:20:18.709Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-11-07T09:20:18.709Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:20:18.711Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-11-07T09:20:18.711Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:20:18.712Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [none]
+[debug] [2022-11-07T09:20:18.713Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:20:18.713Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [none]
+[debug] [2022-11-07T09:20:18.714Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:20:20.422Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com 200
+[debug] [2022-11-07T09:20:20.422Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-11-07T09:20:20.447Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com 200
+[debug] [2022-11-07T09:20:20.447Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-11-07T09:20:20.450Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com 200
+[debug] [2022-11-07T09:20:20.450Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-11-07T09:20:20.616Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com 200
+[debug] [2022-11-07T09:20:20.616Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-11-07T09:20:20.616Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig [none]
+[debug] [2022-11-07T09:20:21.097Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig 200
+[debug] [2022-11-07T09:20:21.097Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig {"projectId":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"}
+[debug] [2022-11-07T09:20:21.098Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs [none]
+[debug] [2022-11-07T09:20:21.751Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs 200
+[debug] [2022-11-07T09:20:21.751Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-11-07T09:20:21.754Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-11-07T09:20:25.023Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-11-07T09:20:25.024Z] Building nodejs source
+[debug] [2022-11-07T09:20:25.026Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-07T09:20:25.450Z] Serving at port 9005
+
+[debug] [2022-11-07T09:20:25.548Z] Got response from /__/functions.yaml {"endpoints":{"getProjectAndCreateProject":{"platform":"gcfv1","scheduleTrigger":{"schedule":"every 2 minutes"},"labels":{},"entryPoint":"getProjectAndCreateProject"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}]}
+[debug] [2022-11-07T09:20:25.563Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged E:\OwnEnergy3Oct\OwnEnergyBackend\functions (54.41 KB) for uploading 
+[debug] [2022-11-07T09:20:25.642Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions [none]
+[debug] [2022-11-07T09:20:26.522Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:20:26.522Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions {"functions":[{"name":"projects/ownproduction/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-ownproduction.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"DELETE_IN_PROGRESS","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ownproduction@appspot.gserviceaccount.com","updateTime":"2022-11-07T08:58:40.126Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-635194157534.us-central1.cloudfunctions.appspot.com/ea7b4e13-5432-481c-ba74-484dbbb0ab5e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"storageBucket\":\"ownproduction.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"ownproduction"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"707a2d36-6b0f-4ff8-82ad-580464c51a63","buildName":"projects/1079660110912/locations/us-central1/builds/707a2d36-6b0f-4ff8-82ad-580464c51a63","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-a9wj-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Leads/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-sea-ecdt@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:53.056Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search-a9wj","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search-a9wj"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Leads","COLLECTION_PATH":"Leads","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search-a9wj","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"bb08869a-9269-434d-8365-781a526d826a","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-a9wj-ALGOLIA_API_KEY","version":"2"}],"buildName":"projects/1079660110912/locations/us-east1/builds/bb08869a-9269-434d-8365-781a526d826a","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Users/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-search@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:51.423Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Users","COLLECTION_PATH":"Users","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"70517740-e6ea-4508-80ee-fc7a158b7aec","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-ALGOLIA_API_KEY","version":"1"}],"buildName":"projects/1079660110912/locations/us-east1/builds/70517740-e6ea-4508-80ee-fc7a158b7aec","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-07T09:20:26.524Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-07T09:20:27.747Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:20:27.747Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions {}
+[info] i  functions: ensuring required API cloudscheduler.googleapis.com is enabled... 
+[debug] [2022-11-07T09:20:27.754Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com [none]
+[debug] [2022-11-07T09:20:27.754Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:20:29.316Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com 200
+[debug] [2022-11-07T09:20:29.317Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com [omitted]
+[info] +  functions: required API cloudscheduler.googleapis.com is enabled 
+[debug] [2022-11-07T09:20:29.319Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:20:29.905Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:20:29.905Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_4107973a-f2e5-41a0-890b-8077cd6c608a"}
+[debug] [2022-11-07T09:20:29.907Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-11-07T09:20:29.907Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-11-07T09:20:31.158Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl 500
+[debug] [2022-11-07T09:20:31.158Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {"error":{"code":500,"message":"The service has encountered an internal error. Please try again later","status":"INTERNAL"}}
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[warn] !  functions: Upload Error: HTTP Error: 500, The service has encountered an internal error. Please try again later 
+[error] 
+[error] Error: HTTP Error: 500, The service has encountered an internal error. Please try again later
+[debug] [2022-11-07T09:20:31.475Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "The service has encountered an internal error. Please try again later",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-11-07T09:30:34.884Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T09:30:34.887Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:delete
+[debug] [2022-11-07T09:30:34.887Z] CLI Version:   11.16.0
+[debug] [2022-11-07T09:30:34.888Z] Platform:      win32
+[debug] [2022-11-07T09:30:34.888Z] Node Version:  v16.17.1
+[debug] [2022-11-07T09:30:34.889Z] Time:          Mon Nov 07 2022 05:30:34 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T09:30:34.889Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T09:30:34.974Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T09:30:34.981Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T09:30:34.981Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T09:30:34.982Z] [iam] checking project ownproduction for permissions ["cloudfunctions.functions.delete","cloudfunctions.functions.list","firebase.projects.get"]
+[debug] [2022-11-07T09:30:34.984Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T09:30:34.985Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:30:34.985Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.delete","cloudfunctions.functions.list","firebase.projects.get"]}
+[debug] [2022-11-07T09:31:49.157Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T09:31:49.160Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:delete helloWorld
+[debug] [2022-11-07T09:31:49.160Z] CLI Version:   11.16.0
+[debug] [2022-11-07T09:31:49.161Z] Platform:      win32
+[debug] [2022-11-07T09:31:49.161Z] Node Version:  v16.17.1
+[debug] [2022-11-07T09:31:49.162Z] Time:          Mon Nov 07 2022 05:31:49 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T09:31:49.162Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T09:31:49.247Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T09:31:49.253Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T09:31:49.254Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T09:31:49.254Z] [iam] checking project ownproduction for permissions ["cloudfunctions.functions.delete","cloudfunctions.functions.list","firebase.projects.get"]
+[debug] [2022-11-07T09:31:49.257Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T09:31:49.257Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T09:31:49.258Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.delete","cloudfunctions.functions.list","firebase.projects.get"]}
+[debug] [2022-11-07T09:31:49.708Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions 200
+[debug] [2022-11-07T09:31:49.708Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.delete","cloudfunctions.functions.list","firebase.projects.get"]}
+[debug] [2022-11-07T09:31:49.710Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig [none]
+[debug] [2022-11-07T09:31:49.711Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions [none]
+[debug] [2022-11-07T09:31:50.239Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig 200
+[debug] [2022-11-07T09:31:50.239Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig {"projectId":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"}
+[debug] [2022-11-07T09:31:50.626Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:31:50.626Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions {"functions":[{"name":"projects/ownproduction/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-ownproduction.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"UNKNOWN","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ownproduction@appspot.gserviceaccount.com","updateTime":"2022-11-07T08:58:40.126Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-635194157534.us-central1.cloudfunctions.appspot.com/ea7b4e13-5432-481c-ba74-484dbbb0ab5e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"storageBucket\":\"ownproduction.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"ownproduction"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"707a2d36-6b0f-4ff8-82ad-580464c51a63","buildName":"projects/1079660110912/locations/us-central1/builds/707a2d36-6b0f-4ff8-82ad-580464c51a63","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-a9wj-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Leads/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-sea-ecdt@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:53.056Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search-a9wj","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search-a9wj"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Leads","COLLECTION_PATH":"Leads","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search-a9wj","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"bb08869a-9269-434d-8365-781a526d826a","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-a9wj-ALGOLIA_API_KEY","version":"2"}],"buildName":"projects/1079660110912/locations/us-east1/builds/bb08869a-9269-434d-8365-781a526d826a","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Users/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-search@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:51.423Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Users","COLLECTION_PATH":"Users","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"70517740-e6ea-4508-80ee-fc7a158b7aec","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-ALGOLIA_API_KEY","version":"1"}],"buildName":"projects/1079660110912/locations/us-east1/builds/70517740-e6ea-4508-80ee-fc7a158b7aec","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-07T09:31:50.628Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-07T09:31:51.860Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T09:31:51.861Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions {}
+[debug] [2022-11-07T09:31:55.536Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T09:31:56.214Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T09:31:56.215Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_763f5270-54fe-4dad-bc68-5fdb57eda7de"}
+[info] i  functions: deleting Node.js 16 function helloWorld(us-central1)... 
+[debug] [2022-11-07T09:31:56.217Z] >>> [apiv2][query] DELETE https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions/helloWorld [none]
+[debug] [2022-11-07T09:31:56.709Z] <<< [apiv2][status] DELETE https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions/helloWorld 200
+[debug] [2022-11-07T09:31:56.709Z] <<< [apiv2][body] DELETE https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions/helloWorld {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:31:56.709Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:31:57.169Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:31:57.170Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:31:57.675Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:31:57.676Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:31:58.121Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:31:58.121Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:31:59.134Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:31:59.135Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:31:59.575Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:31:59.576Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:01.585Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:01.586Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:02.031Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:02.031Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:06.045Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:06.046Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:06.473Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:06.473Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:14.479Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:14.480Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:14.938Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:14.938Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:24.942Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:24.943Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:25.395Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:25.395Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:35.408Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:35.409Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:35.834Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:35.834Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:45.846Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:45.847Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:46.292Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:46.292Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:32:56.293Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:32:56.293Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:32:56.739Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:32:56.739Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:33:06.742Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:33:06.743Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:33:07.178Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:33:07.178Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:33:17.188Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:33:17.188Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:33:17.610Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:33:17.610Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:33:27.616Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:33:27.617Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:33:28.069Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:33:28.069Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:33:38.078Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:33:38.079Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:33:38.519Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:33:38.519Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:33:48.524Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:33:48.525Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:33:48.994Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:33:48.994Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:33:59.007Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:33:59.008Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:33:59.466Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:33:59.466Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:34:09.467Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:34:09.467Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:34:09.893Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:34:09.893Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:34:19.896Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:34:19.896Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:34:20.350Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:34:20.350Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:34:30.364Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:34:30.365Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:34:30.830Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:34:30.831Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:34:40.840Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:34:40.840Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:34:41.291Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:34:41.291Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:34:51.298Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:34:51.298Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:34:51.740Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:34:51.740Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:35:01.748Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:35:01.748Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:35:02.214Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:35:02.215Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:35:12.226Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:35:12.227Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:35:12.659Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:35:12.659Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:35:22.660Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:35:22.661Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:35:23.108Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:35:23.108Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:35:33.108Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:35:33.108Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:35:33.549Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:35:33.549Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:35:43.551Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:35:43.552Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:35:43.995Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:35:43.996Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:35:54.005Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:35:54.005Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:35:54.509Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:35:54.509Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:36:04.509Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:36:04.510Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:36:04.958Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:36:04.958Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:36:14.972Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:36:14.973Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:36:15.469Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:36:15.469Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:36:25.475Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:36:25.475Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:36:25.910Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:36:25.910Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:36:35.919Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:36:35.920Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:36:36.379Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:36:36.380Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:36:46.381Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:36:46.381Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:36:46.826Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:36:46.826Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:36:56.836Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:36:56.836Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:36:57.411Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:36:57.411Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:37:07.421Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:37:07.421Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:37:07.879Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:37:07.879Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:37:17.892Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:37:17.893Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:37:18.327Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:37:18.327Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:37:28.332Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:37:28.333Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:37:28.766Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:37:28.766Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:37:38.767Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:37:38.768Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:37:39.215Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:37:39.215Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:37:49.216Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:37:49.216Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:37:49.657Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:37:49.658Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:37:59.659Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:37:59.660Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:38:00.094Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:38:00.094Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:38:10.106Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:38:10.107Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:38:10.541Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:38:10.541Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:38:20.555Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:38:20.555Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:38:20.995Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:38:20.995Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:38:31.003Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:38:31.004Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:38:31.451Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:38:31.451Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:38:41.461Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:38:41.461Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:38:41.884Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:38:41.884Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:38:51.890Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:38:51.890Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:38:52.313Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:38:52.314Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:39:02.315Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:39:02.315Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:39:02.761Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:39:02.761Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:39:12.768Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:39:12.769Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:39:13.193Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:39:13.193Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:39:23.201Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:39:23.202Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:39:23.639Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:39:23.639Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:39:33.654Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:39:33.655Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:39:34.131Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:39:34.131Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:39:44.145Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:39:44.146Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:39:44.606Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:39:44.606Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:39:54.614Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:39:54.615Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:39:55.054Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:39:55.054Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:40:05.069Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:40:05.069Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:40:05.503Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:40:05.503Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:40:15.506Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:40:15.507Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:40:15.951Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:40:15.951Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:40:25.954Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:40:25.954Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:40:26.391Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:40:26.392Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:40:36.407Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:40:36.408Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:40:36.850Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:40:36.850Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:40:46.861Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:40:46.862Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:40:47.318Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:40:47.318Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:40:57.326Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:40:57.326Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:40:57.767Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:40:57.767Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:41:07.769Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:41:07.770Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:41:08.212Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:41:08.212Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:41:18.220Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:41:18.221Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:41:18.662Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:41:18.662Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:41:28.675Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:41:28.676Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:41:29.095Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:41:29.095Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:41:39.108Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:41:39.108Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:41:39.557Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:41:39.557Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:41:49.564Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:41:49.565Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:41:50.004Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:41:50.004Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:42:00.011Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:42:00.012Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:42:01.643Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:42:01.644Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:42:11.648Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:42:11.648Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:42:12.085Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:42:12.085Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:42:22.094Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:42:22.094Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:42:22.542Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:42:22.542Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:42:32.542Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:42:32.542Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:42:32.986Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:42:32.986Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:42:42.995Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:42:42.995Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:42:43.434Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:42:43.434Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:42:53.439Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:42:53.439Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:42:53.892Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:42:53.892Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T09:43:03.903Z] [delete-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2022-11-07T09:43:03.904Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF [none]
+[debug] [2022-11-07T09:43:04.330Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF 200
+[debug] [2022-11-07T09:43:04.330Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF {"name":"operations/b3ducHJvZHVjdGlvbi91cy1jZW50cmFsMS9oZWxsb1dvcmxkL0pPRHdLSHFTUHpF","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/ownproduction/locations/us-central1/functions/helloWorld","type":"DELETE_FUNCTION","request":{"@type":"type.googleapis.com/google.protobuf.Empty"},"updateTime":"2022-11-07T09:31:56Z"}}
+[debug] [2022-11-07T14:04:47.432Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T14:04:47.435Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2022-11-07T14:04:47.435Z] CLI Version:   11.16.0
+[debug] [2022-11-07T14:04:47.436Z] Platform:      win32
+[debug] [2022-11-07T14:04:47.436Z] Node Version:  v16.17.1
+[debug] [2022-11-07T14:04:47.437Z] Time:          Mon Nov 07 2022 10:04:47 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T14:04:47.437Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T14:04:47.547Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T14:04:47.554Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T14:04:47.555Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T14:04:47.555Z] [iam] checking project ownproduction for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-11-07T14:04:47.557Z] > refreshing access token with scopes: []
+[debug] [2022-11-07T14:04:47.560Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-07T14:04:47.560Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-07T14:04:47.983Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-07T14:04:47.983Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-07T14:04:48.002Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T14:04:48.002Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:04:48.003Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T14:04:49.595Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions 200
+[debug] [2022-11-07T14:04:49.595Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-11-07T14:04:49.595Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-11-07T14:04:49.595Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-07T14:04:51.093Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-11-07T14:04:51.094Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ownproduction/serviceAccounts/ownproduction@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'ownproduction'...
+[info] 
+[info] i  deploying functions 
+[debug] [2022-11-07T14:04:51.103Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T14:04:51.621Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T14:04:51.621Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_4be47197-c548-4161-b637-e66ef2a0448a"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-11-07T14:04:51.627Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-11-07T14:04:51.628Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:04:51.629Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-11-07T14:04:51.629Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:04:51.630Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [none]
+[debug] [2022-11-07T14:04:51.631Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:04:51.632Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [none]
+[debug] [2022-11-07T14:04:51.632Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:04:53.406Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com 200
+[debug] [2022-11-07T14:04:53.406Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-11-07T14:04:53.411Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com 200
+[debug] [2022-11-07T14:04:53.411Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-11-07T14:04:53.431Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com 200
+[debug] [2022-11-07T14:04:53.431Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-11-07T14:04:53.558Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com 200
+[debug] [2022-11-07T14:04:53.558Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-11-07T14:04:53.559Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig [none]
+[debug] [2022-11-07T14:04:54.048Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig 200
+[debug] [2022-11-07T14:04:54.048Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig {"projectId":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"}
+[debug] [2022-11-07T14:04:54.049Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs [none]
+[debug] [2022-11-07T14:04:54.769Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs 200
+[debug] [2022-11-07T14:04:54.769Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ownproduction/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-11-07T14:04:54.773Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-11-07T14:04:59.016Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-11-07T14:04:59.017Z] Building nodejs source
+[debug] [2022-11-07T14:04:59.019Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-07T14:04:59.504Z] Serving at port 9005
+
+[debug] [2022-11-07T14:04:59.644Z] Got response from /__/functions.yaml {"endpoints":{"getProjectAndCreateProject":{"platform":"gcfv1","scheduleTrigger":{"schedule":"every 2 minutes"},"labels":{},"entryPoint":"getProjectAndCreateProject"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}]}
+[debug] [2022-11-07T14:04:59.664Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged E:\OwnEnergy3Oct\OwnEnergyBackend\functions (54.41 KB) for uploading 
+[debug] [2022-11-07T14:04:59.767Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions [none]
+[debug] [2022-11-07T14:05:00.623Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T14:05:00.623Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/-/functions {"functions":[{"name":"projects/ownproduction/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-ownproduction.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"UNKNOWN","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ownproduction@appspot.gserviceaccount.com","updateTime":"2022-11-07T09:31:56.294Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-635194157534.us-central1.cloudfunctions.appspot.com/ea7b4e13-5432-481c-ba74-484dbbb0ab5e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"storageBucket\":\"ownproduction.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"ownproduction"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"707a2d36-6b0f-4ff8-82ad-580464c51a63","buildName":"projects/1079660110912/locations/us-central1/builds/707a2d36-6b0f-4ff8-82ad-580464c51a63","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-a9wj-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Leads/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-sea-ecdt@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:53.056Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search-a9wj","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search-a9wj"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Leads","COLLECTION_PATH":"Leads","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search-a9wj","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"bb08869a-9269-434d-8365-781a526d826a","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-a9wj-ALGOLIA_API_KEY","version":"2"}],"buildName":"projects/1079660110912/locations/us-east1/builds/bb08869a-9269-434d-8365-781a526d826a","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/ownproduction/locations/us-east1/functions/ext-firestore-algolia-search-executeIndexOperation","description":"Firestore document-triggered function that creates, updates, or deletes data in Algolia.","sourceArchiveUrl":"gs://firebase-mod-sources-prod/0a50813c979c2b95076a5358d1e216bd475cd167fb22a693271cbba4282b66bc","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/ownproduction/databases/(default)/documents/Users/{documentID}","service":"firestore.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"executeIndexOperation","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ext-firestore-algolia-search@ownproduction.iam.gserviceaccount.com","updateTime":"2022-09-13T19:31:51.423Z","versionId":"2","labels":{"firebase-extensions-ar":"enabled","goog-dm":"firebase-ext-firestore-algolia-search","goog-firebase-ext":"firestore-algolia-search","deployment-tool":"firebase-extensions","goog-firebase-ext-iid":"firestore-algolia-search"},"environmentVariables":{"ALGOLIA_APP_ID":"9X868Z8H0C","ALGOLIA_INDEX_NAME":"Users","COLLECTION_PATH":"Users","DATABASE_INSTANCE":"","DATABASE_URL":"","EXT_INSTANCE_ID":"firestore-algolia-search","FIREBASE_CONFIG":"{\"projectId\":\"ownproduction\",\"databaseURL\":\"\",\"storageBucket\":\"ownproduction.appspot.com\"}","FORCE_DATA_SYNC":"no","LOCATION":"us-east1","PROJECT_ID":"ownproduction","STORAGE_BUCKET":"ownproduction.appspot.com"},"runtime":"nodejs10","ingressSettings":"ALLOW_INTERNAL_ONLY","buildId":"70517740-e6ea-4508-80ee-fc7a158b7aec","secretEnvironmentVariables":[{"key":"ALGOLIA_API_KEY","projectId":"1079660110912","secret":"firestore-algolia-search-ALGOLIA_API_KEY","version":"1"}],"buildName":"projects/1079660110912/locations/us-east1/builds/70517740-e6ea-4508-80ee-fc7a158b7aec","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-07T14:05:00.627Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-07T14:05:01.852Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions 200
+[debug] [2022-11-07T14:05:01.852Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ownproduction/locations/-/functions {}
+[info] i  functions: ensuring required API cloudscheduler.googleapis.com is enabled... 
+[debug] [2022-11-07T14:05:01.859Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com [none]
+[debug] [2022-11-07T14:05:01.859Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:05:03.480Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com 200
+[debug] [2022-11-07T14:05:03.480Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ownproduction/services/cloudscheduler.googleapis.com [omitted]
+[info] +  functions: required API cloudscheduler.googleapis.com is enabled 
+[debug] [2022-11-07T14:05:03.483Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction [none]
+[debug] [2022-11-07T14:05:04.046Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction 200
+[debug] [2022-11-07T14:05:04.046Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction {"projectId":"ownproduction","projectNumber":"1079660110912","displayName":"OWNProduction","name":"projects/ownproduction","resources":{"hostingSite":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_4be47197-c548-4161-b637-e66ef2a0448a"}
+[debug] [2022-11-07T14:05:04.047Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-11-07T14:05:04.048Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-11-07T14:05:05.141Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl 500
+[debug] [2022-11-07T14:05:05.141Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/ownproduction/locations/us-central1/functions:generateUploadUrl {"error":{"code":500,"message":"The service has encountered an internal error. Please try again later","status":"INTERNAL"}}
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[warn] !  functions: Upload Error: HTTP Error: 500, The service has encountered an internal error. Please try again later 
+[error] 
+[error] Error: HTTP Error: 500, The service has encountered an internal error. Please try again later
+[debug] [2022-11-07T14:05:05.459Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "The service has encountered an internal error. Please try again later",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-11-07T14:53:09.990Z] ----------------------------------------------------------------------
+[debug] [2022-11-07T14:53:09.992Z] Command:       C:\Program Files\nodejs\node.exe E:\OwnEnergy3Oct\OwnEnergyBackend\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2022-11-07T14:53:09.993Z] CLI Version:   11.8.0
+[debug] [2022-11-07T14:53:09.993Z] Platform:      win32
+[debug] [2022-11-07T14:53:09.994Z] Node Version:  v16.17.1
+[debug] [2022-11-07T14:53:09.995Z] Time:          Mon Nov 07 2022 10:53:09 GMT-0400 (Atlantic Standard Time)
+[debug] [2022-11-07T14:53:09.995Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-07T14:53:10.087Z] Object ".extensions" in "firebase.json" has unknown property: {"additionalProperty":"firestore-algolia-search"}
+[debug] [2022-11-07T14:53:10.095Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-07T14:53:10.096Z] > authorizing via signed-in user (developer@ownourenergy.com)
+[debug] [2022-11-07T14:53:10.096Z] [iam] checking project ownproduction for permissions ["firebase.projects.get"]
+[debug] [2022-11-07T14:53:10.098Z] > refreshing access token with scopes: []
+[debug] [2022-11-07T14:53:10.102Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-07T14:53:10.102Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-07T14:53:10.557Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-07T14:53:10.557Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-07T14:53:10.579Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions [none]
+[debug] [2022-11-07T14:53:10.580Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions x-goog-quota-user=projects/ownproduction
+[debug] [2022-11-07T14:53:10.580Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-11-07T14:53:12.144Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions 200
+[debug] [2022-11-07T14:53:12.144Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ownproduction:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-11-07T14:53:12.190Z] [functions] Using node@16 from host.
+[debug] [2022-11-07T14:53:12.191Z] defaultcredentials: writing to file C:\Users\aashi\AppData\Roaming\firebase\developer_ownourenergy_com_application_default_credentials.json
+[debug] [2022-11-07T14:53:12.193Z] DEBUG: Setting GAC to C:\Users\aashi\AppData\Roaming\firebase\developer_ownourenergy_com_application_default_credentials.json
+[debug] [2022-11-07T14:53:12.194Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig [none]
+[debug] [2022-11-07T14:53:12.713Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig 200
+[debug] [2022-11-07T14:53:12.713Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ownproduction/adminSdkConfig {"projectId":"ownproduction","storageBucket":"ownproduction.appspot.com","locationId":"us-central"}
+[debug] [2022-11-07T14:53:12.732Z] [functions] Watching "E:\OwnEnergy3Oct\OwnEnergyBackend\functions" for Cloud Functions...
+[debug] [2022-11-07T14:53:12.739Z] Validating nodejs source
